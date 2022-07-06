@@ -7,13 +7,18 @@ const message=document.querySelector("#error-message")
 
 function validatebillandcashamount(){
     if(billamount.value>0){
-       
 
+        if(Cashgiven.value>billamount.value){
+            const amounttobereturned=billamount.value-Cashgiven.value;
+            calculatechange(amounttobereturned);
+            
+        }else{
+            showmessage("Do you Want to wash the plates of the Manager")
+
+        }
     }
     else{
         showmessage("please enter a valid cash amount");
-        
-
     }
 }
 function hidemessage(){
